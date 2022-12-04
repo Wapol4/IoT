@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-arduino-uno", "id": "uno", "top": 94.66, "left": -14.66, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -72.8,
+        "left": 151.79,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": -71.2,
+        "left": 219.4,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": -72.28,
+        "left": 183.66,
+        "attrs": { "color": "yellow" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": -12.53,
+        "left": 119.34,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 29.07,
+        "left": 161.6,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 11.74,
+        "left": 162.27,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": -22.33,
+        "left": -72.27,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r4",
+        "top": 33.07,
+        "left": 9.06,
+        "attrs": { "value": "1000" }
+      }
+    ],
+    "connections": [
+      [ "led3:A", "r3:2", "green", [ "v13.37", "h27.01", "v37.33" ] ],
+      [ "r3:1", "uno:2", "green", [ "v-0.65", "h-19.27", "v58", "h67.33" ] ],
+      [ "led1:A", "r1:2", "green", [ "v0" ] ],
+      [ "r1:1", "uno:3", "green", [ "v81.62", "h0.33", "v8", "h81.33" ] ],
+      [ "uno:GND.1", "led1:C", "black", [ "v0" ] ],
+      [ "uno:GND.1", "led3:C", "black", [ "v-119.24", "h95.49" ] ],
+      [ "uno:GND.1", "led2:C", "black", [ "v-124.57", "h132.16" ] ],
+      [ "r2:1", "uno:4", "green", [ "v18.68", "h31.4" ] ],
+      [ "btn1:1.r", "r4:1", "green", [ "h17.94", "v52.4" ] ],
+      [ "r4:2", "uno:GND.1", "black", [ "v-2.48", "h20.14" ] ],
+      [ "btn1:2.l", "uno:VIN", "red", [ "h-34.4", "v311.59", "h286.67" ] ],
+      [ "uno:10", "btn1:1.l", "green", [ "v-47.07", "h-234.84", "v-68" ] ],
+      [ "r2:2", "led2:A", "green", [ "v1.52", "h48.93" ] ]
+    ]
+  }
