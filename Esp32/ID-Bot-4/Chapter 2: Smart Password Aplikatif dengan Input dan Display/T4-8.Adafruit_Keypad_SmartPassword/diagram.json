@@ -1,0 +1,67 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 7.33, "left": -189.33, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -0.63,
+        "left": -307.46,
+        "attrs": { "color": "yellow" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 45.05,
+        "left": -308.34,
+        "attrs": { "color": "blue" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 34.45,
+        "left": -254.91,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 60.71,
+        "left": -253.24,
+        "attrs": { "value": "1000" }
+      },
+      { "type": "board-ssd1306", "id": "oled1", "top": 121.55, "left": -28.37, "attrs": {} },
+      {
+        "type": "wokwi-membrane-keypad",
+        "id": "keypad1",
+        "top": -362.07,
+        "left": -49.09,
+        "attrs": {}
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "led2:A", "r2:1", "blue", [ "v0" ] ],
+      [ "led1:A", "r1:1", "yellow", [ "v4.12", "h20.63" ] ],
+      [ "esp:D32", "r2:2", "blue", [ "h0" ] ],
+      [ "esp:GND.2", "led2:C", "black", [ "h0" ] ],
+      [ "esp:GND.2", "led1:C", "black", [ "h-125.11", "v-108.46", "h13.49" ] ],
+      [ "r1:2", "esp:D33", "yellow", [ "v0" ] ],
+      [ "oled1:GND", "esp:GND.1", "black", [ "v-47.53", "h-45.75", "v94.3" ] ],
+      [ "oled1:VCC", "esp:3V3", "red", [ "v-56.68", "h-67.16", "v85.86" ] ],
+      [ "oled1:SCL", "esp:D22", "gold", [ "v0" ] ],
+      [ "oled1:SDA", "esp:D21", "green", [ "v-71.27", "h-126.56" ] ],
+      [ "esp:D14", "keypad1:R1", "purple", [ "h33.72", "v-128.13", "h144.87" ] ],
+      [ "esp:D12", "keypad1:R2", "magenta", [ "h46.02", "v-121.19", "h194.65" ] ],
+      [ "esp:D19", "keypad1:R3", "limegreen", [ "h-35.18", "v-51.24", "h214.23" ] ],
+      [ "esp:D18", "keypad1:R4", "yellow", [ "h-22.87", "v-54.03", "h203.6" ] ],
+      [ "esp:D5", "keypad1:C1", "cyan", [ "h-20.63", "v135.5", "h229.89" ] ],
+      [ "esp:D4", "keypad1:C2", "white", [ "h-29.58", "v120.22", "h243.32" ] ],
+      [ "esp:D2", "keypad1:C3", "gray", [ "h-38.53", "v126.6", "h246.67" ] ],
+      [ "esp:D15", "keypad1:C4", "blue", [ "h-49.72", "v129.25", "h258.42" ] ]
+    ],
+    "dependencies": {}
+  }
