@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.68, "left": 93.33, "attrs": {} },
+      { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 80.41, "left": -25.39, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -4.26,
+        "left": -38.46,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 32.94,
+        "left": 13.73,
+        "attrs": { "value": "470" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "r1:2", "esp:D13", "blue", [ "v2.67", "h10.64", "v48" ] ],
+      [ "r1:1", "led1:A", "blue", [ "v0" ] ],
+      [ "led1:C", "esp:GND.2", "black", [ "v33.2", "h95.29", "v82.74" ] ],
+      [ "esp:D15", "pir1:OUT", "yellow", [ "h23.87", "v89.43", "h-176.67" ] ],
+      [ "pir1:VCC", "esp:3V3", "red", [ "v41.87", "h239.04", "v-51.1" ] ],
+      [ "pir1:GND", "esp:GND.1", "black", [ "v80.53", "h204.92", "v-101.33" ] ]
+    ],
+    "dependencies": {}
+  }

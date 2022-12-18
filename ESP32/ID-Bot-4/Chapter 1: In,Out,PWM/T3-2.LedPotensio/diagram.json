@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -3.03, "left": -162.64, "attrs": {} },
+      { "type": "wokwi-led", "id": "led1", "top": 4.74, "left": 11.59, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 92.68,
+        "left": -33.47,
+        "attrs": { "value": "470" }
+      },
+      { "type": "wokwi-potentiometer", "id": "pot1", "top": 114.53, "left": -36.12, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "led1:A", "r1:2", "red", [ "v0" ] ],
+      [ "esp:D5", "r1:1", "red", [ "h0" ] ],
+      [ "esp:GND.2", "led1:C", "black", [ "h-15.77", "v-155.9", "h130.11", "v85.48", "h65.06" ] ],
+      [ "esp:GND.1", "pot1:GND", "black", [ "h15.01", "v64.99", "h31.02" ] ],
+      [ "esp:D34", "pot1:SIG", "blue", [ "h-27.5", "v172.62", "h189.12" ] ],
+      [ "pot1:VCC", "esp:3V3", "red", [ "v51", "h-63.37", "v-77.54" ] ]
+    ]
+  }

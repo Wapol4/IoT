@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.68, "left": 93.33, "attrs": {} },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": 56.86, "left": 279.33, "attrs": {} },
+      { "type": "wokwi-slide-switch", "id": "sw1", "top": 22.94, "left": 43.9, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "relay1:VCC", "esp:3V3", "red", [ "h-27.5", "v95.08" ] ],
+      [ "relay1:GND", "esp:GND.1", "black", [ "h-38.83", "v57.75" ] ],
+      [ "relay1:IN", "esp:D15", "yellow", [ "h-52.16", "v37.02" ] ],
+      [ "esp:GND.1", "relay1:COM", "black", [ "h45.2", "v-26.74", "h184.67", "v-40.08" ] ],
+      [ "esp:GND.2", "sw1:2", "black", [ "h0" ] ],
+      [ "sw1:3", "esp:D13", "yellow", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }

@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.68, "left": 93.33, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -4.26,
+        "left": -38.46,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 32.94,
+        "left": 13.73,
+        "attrs": { "value": "470" }
+      },
+      { "type": "wokwi-servo", "id": "servo1", "top": 14.01, "left": 250.66, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "r1:2", "esp:D13", "blue", [ "v2.67", "h10.64", "v48" ] ],
+      [ "r1:1", "led1:A", "blue", [ "v0" ] ],
+      [ "led1:C", "esp:GND.2", "black", [ "v33.2", "h95.29", "v82.74" ] ],
+      [ "servo1:GND", "esp:GND.1", "black", [ "h-15.5", "v104.94" ] ],
+      [ "servo1:V+", "esp:3V3", "red", [ "h-27.49", "v84.1" ] ],
+      [ "esp:D15", "servo1:PWM", "yellow", [ "h17.87", "v-59.9" ] ]
+    ],
+    "dependencies": {}
+  }

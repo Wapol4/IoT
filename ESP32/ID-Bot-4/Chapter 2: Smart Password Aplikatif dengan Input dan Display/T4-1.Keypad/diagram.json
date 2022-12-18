@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 7.33, "left": -189.33, "attrs": {} },
+      {
+        "type": "wokwi-membrane-keypad",
+        "id": "keypad1",
+        "top": -174.53,
+        "left": 6.54,
+        "attrs": {}
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "keypad1:R1", "esp:D22", "limegreen", [ "v41.62", "h-126.37", "v-100.67" ] ],
+      [ "keypad1:R2", "esp:D21", "yellow", [ "v50.95", "h-148.37", "v-153.33" ] ],
+      [ "keypad1:C1", "esp:D5", "blue", [ "v92.29", "h-368.21", "v-106.67" ] ],
+      [ "keypad1:C2", "esp:D4", "white", [ "v108.95", "h-397.71", "v-133.33" ] ],
+      [ "keypad1:C3", "esp:D2", "gray", [ "v126.29", "h-427.46", "v-137.33" ] ],
+      [ "keypad1:C4", "esp:D15", "green", [ "v148.07", "h-452.04", "v-130.97" ] ],
+      [ "esp:D19", "keypad1:R3", "gray", [ "h45.37", "v146.69", "h164.22" ] ],
+      [ "keypad1:R4", "esp:D18", "green", [ "v77.21", "h-199.33", "v-152.36" ] ]
+    ]
+  }

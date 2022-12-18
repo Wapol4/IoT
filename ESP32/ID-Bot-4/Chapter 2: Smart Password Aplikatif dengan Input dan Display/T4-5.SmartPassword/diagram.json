@@ -1,0 +1,70 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 7.33, "left": -189.33, "attrs": {} },
+      {
+        "type": "wokwi-membrane-keypad",
+        "id": "keypad1",
+        "top": -174.53,
+        "left": 6.54,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd1",
+        "top": -160.56,
+        "left": -308.2,
+        "attrs": { "pins": "i2c" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -0.63,
+        "left": -307.46,
+        "attrs": { "color": "yellow" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 45.05,
+        "left": -308.34,
+        "attrs": { "color": "blue" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 34.45,
+        "left": -254.91,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 60.71,
+        "left": -253.24,
+        "attrs": { "value": "1000" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "keypad1:C1", "esp:D5", "blue", [ "v92.29", "h-368.21", "v-106.67" ] ],
+      [ "keypad1:C2", "esp:D4", "white", [ "v108.95", "h-397.71", "v-133.33" ] ],
+      [ "keypad1:C3", "esp:D2", "gray", [ "v126.29", "h-427.46", "v-137.33" ] ],
+      [ "keypad1:C4", "esp:D15", "green", [ "v148.07", "h-452.04", "v-130.97" ] ],
+      [ "esp:D19", "keypad1:R3", "gray", [ "h45.37", "v146.69", "h164.22" ] ],
+      [ "keypad1:R4", "esp:D18", "green", [ "v77.21", "h-199.33", "v-152.36" ] ],
+      [ "esp:D21", "lcd1:SDA", "blue", [ "h46.33", "v-86.41", "h-311.64", "v-69.33" ] ],
+      [ "esp:D22", "lcd1:SCL", "magenta", [ "h30.28", "v-34.15", "h-278.79", "v-108.01" ] ],
+      [ "keypad1:R1", "esp:D14", "yellow", [ "v41.49", "h-311.72", "v-86.85" ] ],
+      [ "keypad1:R2", "esp:D12", "orange", [ "v57.55", "h-333.4", "v-110.93" ] ],
+      [ "led2:A", "r2:1", "blue", [ "v0" ] ],
+      [ "led1:A", "r1:1", "yellow", [ "v4.12", "h20.63" ] ],
+      [ "esp:D32", "r2:2", "blue", [ "h0" ] ],
+      [ "esp:GND.2", "led2:C", "black", [ "h0" ] ],
+      [ "esp:GND.2", "led1:C", "black", [ "h-125.11", "v-108.46", "h13.49" ] ],
+      [ "r1:2", "esp:D33", "yellow", [ "v0" ] ]
+    ]
+  }
