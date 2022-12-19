@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+      { "type": "wokwi-dht22", "id": "dht1", "top": -29.16, "left": 145.93, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+      [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+      [ "dht1:SDA", "esp:D15", "blue", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
