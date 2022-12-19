@@ -1,6 +1,6 @@
 
 
-# Kubernetes
+# Dashboard Monitoring DHT22
 
 
 ## Screenshots
