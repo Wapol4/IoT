@@ -1,0 +1,52 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 67.67, "left": -180.01, "attrs": {} },
+      {
+        "type": "wokwi-membrane-keypad",
+        "id": "keypad1",
+        "top": -336.01,
+        "left": -246.47,
+        "attrs": {}
+      },
+      { "type": "wokwi-servo", "id": "servo1", "top": 57.87, "left": 75.37, "attrs": {} },
+      {
+        "type": "wokwi-buzzer",
+        "id": "bz1",
+        "top": 17.25,
+        "left": -297.93,
+        "attrs": { "volume": "0.1" }
+      },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd1",
+        "top": -377.5,
+        "left": 101.2,
+        "attrs": { "pins": "i2c" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "bz1:2", "esp:D25", "red", [ "v0" ] ],
+      [ "bz1:1", "esp:GND.2", "black", [ "v0" ] ],
+      [ "keypad1:R1", "esp:D14", "green", [ "v6.61", "h-54.35", "v144.8" ] ],
+      [ "keypad1:R2", "esp:D12", "green", [ "v12.17", "h-70.42", "v143.79" ] ],
+      [ "keypad1:R3", "esp:D19", "green", [ "v45.06", "h44.55", "v76.54", "h-10.56" ] ],
+      [ "keypad1:R4", "esp:D18", "green", [ "v38.41", "h42.66", "v93.02" ] ],
+      [ "keypad1:C1", "esp:D5", "green", [ "v31.75", "h40.76", "v109.28" ] ],
+      [ "keypad1:C2", "esp:D4", "green", [ "v25.1", "h37.92", "v144.63" ] ],
+      [ "keypad1:C3", "esp:D2", "green", [ "v17.97", "h34.82", "v156.41" ] ],
+      [ "esp:D15", "keypad1:C4", "green", [ "h48.59", "v-179.82", "h-32.33" ] ],
+      [ "esp:GND.1", "servo1:GND", "black", [ "h120.22", "v-108.44" ] ],
+      [ "servo1:PWM", "esp:D26", "green", [ "h-8.29", "v151.63", "h-273.79", "v-109.83" ] ],
+      [ "esp:3V3", "servo1:V+", "red", [ "v-0.79", "h137.55", "v-108.22" ] ],
+      [ "lcd1:SDA", "esp:D21", "green", [ "h-97.95", "v415.57" ] ],
+      [ "lcd1:SCL", "esp:D22", "green", [ "h-34.14", "v378.37" ] ],
+      [ "lcd1:GND", "esp:GND.1", "black", [ "h-86.2", "v558.84" ] ],
+      [ "lcd1:VCC", "esp:3V3", "red", [ "h-61.85", "v569.49" ] ]
+    ],
+    "dependencies": {}
+  }

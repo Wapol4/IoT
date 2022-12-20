@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 3.33, "left": -68.67, "attrs": {} },
+      {
+        "type": "wokwi-dht22",
+        "id": "dht1",
+        "top": -28.03,
+        "left": 86.5,
+        "attrs": { "humidity": "35.5", "temperature": "10.3" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 42.63,
+        "left": -176.17,
+        "attrs": { "color": "blue" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+      [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+      [ "dht1:SDA", "esp:D15", "yellow", [ "h1.17", "v55.96" ] ],
+      [ "esp:D2", "led1:A", "blue", [ "h21.87", "v-148.69", "h-154", "v170", "h-40" ] ],
+      [ "led1:C", "esp:GND.2", "black", [ "v89.74", "h85.67", "v-25.33" ] ]
+    ],
+    "dependencies": {}
+  }
