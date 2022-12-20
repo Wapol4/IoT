@@ -10,7 +10,7 @@ Wokwi Project = https://wokwi.com/projects/344958570893148755
 
 ## Screenshots
 
-![App Screenshot](Docs/Images/Dashboard.jpeg)
+![App Screenshot](Docs/Images/Dashboard.png)
 
 
 ## Environment Variables Blynk.io
