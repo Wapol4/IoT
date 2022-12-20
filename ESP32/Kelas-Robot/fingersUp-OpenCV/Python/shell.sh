@@ -6,3 +6,7 @@
 
 3. Install library from requirements.txt
     - pip install -r requirements.txt
+
+4. Run main program python
+    - python publisher.py
+
