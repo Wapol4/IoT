@@ -1,0 +1,62 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 60.67, "left": 12.67, "attrs": {} },
+      {
+        "type": "wokwi-photoresistor-sensor",
+        "id": "ldr1",
+        "top": -22.54,
+        "left": -24.84,
+        "attrs": {}
+      },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": 128.95, "left": 235.02, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 48.12,
+        "left": 229.35,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-dht22",
+        "id": "dht1",
+        "top": 30.9,
+        "left": -101.56,
+        "attrs": { "temperature": "37.2", "humidity": "49" }
+      },
+      { "type": "wokwi-servo", "id": "servo1", "top": -40.68, "left": 230.42, "attrs": {} },
+      {
+        "type": "wokwi-lcd2004",
+        "id": "lcd1",
+        "top": -215.85,
+        "left": -112.01,
+        "attrs": { "pins": "i2c" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "ldr1:VCC", "esp:3V3", "red", [ "h53", "v223.74" ] ],
+      [ "ldr1:GND", "esp:GND.1", "yellow", [ "h42.34", "v198.41" ] ],
+      [ "esp:D34", "ldr1:AO", "blue", [ "h-32.84", "v-65.63", "h184", "v-25.18" ] ],
+      [ "relay1:VCC", "esp:3V3", "red", [ "h-34.87", "v40.65" ] ],
+      [ "relay1:GND", "esp:GND.1", "black", [ "h-25.4", "v48.96" ] ],
+      [ "relay1:NO", "esp:3V3", "red", [ "h27.89", "v36.06" ] ],
+      [ "relay1:COM", "led1:A", "violet", [ "h27.26", "v-49.26", "h-108.58" ] ],
+      [ "esp:GND.1", "led1:C", "black", [ "h96.28", "v-93.67", "h30.3" ] ],
+      [ "esp:VIN", "dht1:VCC", "red", [ "h0" ] ],
+      [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+      [ "servo1:V+", "esp:3V3", "green", [ "h-30.72", "v48.8" ] ],
+      [ "servo1:GND", "esp:GND.1", "black", [ "h-20.47", "v123.78" ] ],
+      [ "esp:D26", "servo1:PWM", "orange", [ "h-34.12", "v87.39", "h216.93", "v-220.74" ] ],
+      [ "lcd1:GND", "esp:GND.2", "black", [ "h-44.09", "v401.3" ] ],
+      [ "lcd1:VCC", "esp:VIN", "red", [ "h-60.31", "v393.52" ] ],
+      [ "lcd1:SDA", "esp:D21", "purple", [ "h-18.92", "v437.67", "h293.47", "v-149.25" ] ],
+      [ "lcd1:SCL", "esp:D22", "white", [ "h-28.99", "v443.27", "h313.9", "v-193.25" ] ],
+      [ "esp:D15", "dht1:SDA", "limegreen", [ "h34.59", "v62.86", "h-210.06" ] ],
+      [ "esp:D2", "relay1:IN", "cyan", [ "h107.42", "v-23.72" ] ]
+    ],
+    "dependencies": {}
+  }

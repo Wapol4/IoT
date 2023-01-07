@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "author": "Airist",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 60.67, "left": 12.67, "attrs": {} },
+      {
+        "type": "wokwi-photoresistor-sensor",
+        "id": "ldr1",
+        "top": -22.54,
+        "left": -24.84,
+        "attrs": {}
+      },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": 128.95, "left": 235.02, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 48.12,
+        "left": 229.35,
+        "attrs": { "color": "red" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "ldr1:VCC", "esp:3V3", "red", [ "h53", "v223.74" ] ],
+      [ "ldr1:GND", "esp:GND.1", "yellow", [ "h42.34", "v198.41" ] ],
+      [ "esp:D34", "ldr1:AO", "blue", [ "h-32.84", "v-65.63", "h184", "v-25.18" ] ],
+      [ "relay1:VCC", "esp:3V3", "red", [ "h-34.87", "v40.65" ] ],
+      [ "relay1:GND", "esp:GND.1", "black", [ "h-25.4", "v48.96" ] ],
+      [ "esp:D15", "relay1:IN", "green", [ "h106.38", "v-32.4", "h2.53" ] ],
+      [ "relay1:NO", "esp:3V3", "red", [ "h27.89", "v36.06" ] ],
+      [ "relay1:COM", "led1:A", "violet", [ "h27.26", "v-49.26", "h-108.58" ] ],
+      [ "esp:GND.1", "led1:C", "black", [ "h96.28", "v-93.67", "h30.3" ] ]
+    ],
+    "dependencies": {}
+  }
